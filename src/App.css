@@ -1,0 +1,70 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes arrow-bounce {
+  0% {
+    transform: translateX(0); /* Start at original position */
+    opacity: 1; /* Fully visible */
+  }
+  25% {
+    transform: translateX(10px); /* Move right */
+    opacity: 0; /* Fade out */
+  }
+  50% {
+    transform: translateX(-10px); /* Move left, off-screen (disappeared) */
+    opacity: 0; /* Still invisible */
+  }
+  75% {
+    transform: translateX(0); /* Return to original position (still invisible) */
+    opacity: 0; /* Still invisible */
+  }
+  100% {
+    transform: translateX(0); /* Final position */
+    opacity: 1; /* Reappear */
+  }
+}
+
+/* Apply the animation */
+.animate-arrow-bounce {
+  animation: arrow-bounce 0.5s ease-out forwards; /* 0.5s duration, ease-out, stay at end state */
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
