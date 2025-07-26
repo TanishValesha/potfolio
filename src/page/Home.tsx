@@ -10,7 +10,7 @@ import WorkCard from '../components/Home/WorkCard'
 
 const Home = () => {
     return (
-        <div className='bg-gray-100 w-screen h-screen p-8 overflow-auto'>
+        <div className='bg-gray-100 w-screen h-screen p-8 overflow-auto font-sans'>
             <Header />
             <div className='space-y-5'>
                 <div className="max-w-7xl mx-auto grid grid-cols-16 gap-6">

@@ -4,7 +4,7 @@ const StatsCard = () => {
     return (
         // This is the single, large card container
         // Removed 'h-80' to let content define height, matching the image more closely
-        <div className="bg-white rounded-4xl p-8 shadow-sm max-w-7xl relative mx-auto mt-6 h-80">
+        <div className="bg-white rounded-4xl p-8 shadow-sm max-w-7xl relative mx-auto h-80">
             <div className="absolute scale-150 top-10 right-18 opacity-100 rotate-90">
                 <img
                     src="https://assets-global.website-files.com/6526f09d3be13c204a126b74/653143017ae80eb6b1874f0a_bg-pattern-06.svg"

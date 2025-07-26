@@ -6,6 +6,7 @@ import GetInTouchCard from '../components/About/GetInTouchCard'
 import StatsCard from '../components/About/StatCard'
 import WorkCard from '../components/Home/WorkCard'
 import ServiceCard from '../components/Home/ServiceCard'
+import SkillsCard from '../components/About/SkillsCard'
 
 const About = () => {
     return (
@@ -19,9 +20,18 @@ const About = () => {
                     <div className="col-span-16">
                         <GetInTouchCard />
                     </div>
-                    <div className="col-span-16">
+                </div>
+                <div className="max-w-7xl mx-auto grid grid-cols-16 gap-0">
+                    <div className='col-span-16'>
                         <StatsCard />
                     </div>
+                </div>
+                <div className="max-w-7xl mx-auto grid grid-cols-16 gap-0">
+
+                    <div className='col-span-16'>
+                        <SkillsCard />
+                    </div>
+
                 </div>
                 <div className='max-w-7xl mx-auto grid grid-cols-16 gap-6'>
                     <div className="col-span-8">
