@@ -11,7 +11,7 @@ export default function ContactCard() {
 
     const [showValidation, setShowValidation] = useState(false);
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -30,7 +30,7 @@ export default function ContactCard() {
     };
 
     return (
-        <div className="bg-white min-h-screen flex items-baseline justify-center p-4 mt-20 relative">
+        <div className="bg-white flex items-baseline justify-center p-4 mt-20 relative">
             {/* <div className="absolute inset-0 opacity-100">
                 <img
                     src="https://cdn.prod.website-files.com/6526f09d3be13c204a126b74/65317b70405246945c025746_bg-pattern-03.svg"
@@ -45,20 +45,7 @@ export default function ContactCard() {
                     className="w-full h-full object-cover"
                 />
             </div> */}
-            <div className="w-full max-w-6x absolute">
-
-                <div className="text-center mb-12">
-                    <h1 className="text-5xl md:text-6xl font-light mb-4 text-black">
-                        Get in <span className="text-gray-400">touch</span>
-                    </h1>
-
-                    <p className="text-gray-500 max-w-md mx-auto leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        <br />
-                        Suspendisse varius enim in eros elementum tristique.
-                    </p>
-                </div>
-
+            <div className="w-full max-w-6xl absolute">
                 {/* Contact Form Card */}
                 <div className="max-w-lg mx-auto relative">
                     <div className="absolute top-0 right-0 opacity-100 pointer-events-none">

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Header from '../components/Header'
 import ProjectCard from '../components/Home/ProjectCard'
 import Footer from '../components/Footer'
