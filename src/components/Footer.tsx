@@ -37,13 +37,13 @@ const Footer = () => {
                 </div>
 
                 {/* --- SERVICE Link --- */}
-                <div className="group relative">
+                {/* <div className="group relative">
                     <a href="/service" className="text-gray-400 text-[13px] uppercase tracking-wide group-hover:text-black transition-colors">Service</a>
                     <span className="
                         absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-black
                         opacity-0 group-hover:opacity-100 transition-opacity duration-300
                     "></span>
-                </div>
+                </div> */}
 
                 {/* --- CONTACT Link --- */}
                 <div className="group relative">

@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import ProjectCard from '../components/Home/ProjectCard'
 import Footer from '../components/Footer'
 import GetInTouchCard from '../components/About/GetInTouchCard'
+import ExperienceTimeline from '../components/Work/ExperienceCard'
 
 const Work = () => {
     return (
@@ -33,6 +34,9 @@ const Work = () => {
                         <GetInTouchCard />
                     </div>
                 </div>
+            </div>
+            <div className='-mt-10'>
+                <ExperienceTimeline />
             </div>
             <Footer />
         </div >

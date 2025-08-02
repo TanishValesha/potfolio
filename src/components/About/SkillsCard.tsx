@@ -17,19 +17,21 @@ export default function SkillsCard() {
         { name: 'AWS', color: '#232F3E', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
         { name: 'Tailwind', color: '#06B6D4', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
         { name: 'Next.js', color: '#000000', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
-        { name: 'GraphQL', color: '#E10098', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg' }
+        { name: 'GraphQL', color: '#E10098', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg' },
+        { name: 'Supabase', color: '#E10098', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg' },
+        { name: 'Git', color: '#E10098', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' }
     ];
 
     return (
         <div className="w-full max-w-7xl bg-white rounded-3xl p-10 shadow-sm relative overflow-hidden">
             {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-3">
+            {/* <div className="absolute inset-0 opacity-7">
                 <img
                     src="https://skillicons.dev/icons?i=cpp,java,js,ts"
                     alt="Background pattern"
                     className="w-full h-full object-cover"
                 />
-            </div>
+            </div> */}
 
             {/* Content */}
             <div className="relative z-10">
@@ -38,22 +40,16 @@ export default function SkillsCard() {
                     {skills.map((skill, index) => (
                         <div
                             key={index}
-                            className="group flex flex-col items-center p-4 rounded-2xl hover:bg-gray-50 transition-all duration-300 hover:scale-105 cursor-pointer"
+                            className="group flex flex-col items-center p-4 rounded-2xl transition-all duration-300 hover:scale-105 cursor-pointer"
                         >
-                            {/* Icon Container */}
 
                             <img
                                 src={skill.icon}
                                 alt={skill.name}
-                                className="w-12 h-12 object-contain"
+                                className="w-12 h-12 object-contain grayscale-100"
                                 style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))' }}
                             />
 
-
-                            {/* Skill Name */}
-                            <span className="text-xs font-medium mt-1 text-gray-600 text-center leading-tight group-hover:text-black transition-colors duration-300">
-                                {skill.name}
-                            </span>
                         </div>
                     ))}
                 </div>

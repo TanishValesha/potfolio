@@ -1,5 +1,6 @@
 import { Check } from 'lucide-react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function Service() {
     const typographyServices = [
@@ -137,6 +138,7 @@ export default function Service() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }
