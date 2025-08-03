@@ -15,8 +15,8 @@ spec:
         app: react-app     # Labels applied to pods created by this deployment
     spec:
       containers:
-      - name: portfolio # Name of the container inside the pod
-        image: portfolio:latest # The Docker image to use (we'll build it locally)
-        # imagePullPolicy: Never # Use this for local images to prevent Kubernetes from trying to pull from Docker Hub
+      - name: my-react-app # Name of the container inside the pod
+        image: my-react-app:latest # The Docker image to use (we'll build it locally)
+        imagePullPolicy: Never # Use this for local images to prevent Kubernetes from trying to pull from Docker Hub
         ports:
         - containerPort: 80 # The port your Nginx server inside the container listens on
