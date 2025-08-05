@@ -45,7 +45,7 @@ const ProfileCard = () => {
             <div className="flex justify-center items-center h-full mb-6">
                 <div className="relative profile-image-wrapper">
                     <img
-                        src="https://cdn.prod.website-files.com/6526f09d3be13c204a126b74/6526fc6ab97a93f27f9d8976_profile-img.webp"
+                        src="./pp.jpg"
                         loading="lazy"
                         alt="Profile Image for Caard Webflow Template"
                         className="rounded-full w-40 profile-actual-image"

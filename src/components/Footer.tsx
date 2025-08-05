@@ -44,15 +44,6 @@ const Footer = () => {
                         opacity-0 group-hover:opacity-100 transition-opacity duration-300
                     "></span>
                 </div> */}
-
-                {/* --- CONTACT Link --- */}
-                <div className="group relative">
-                    <a href="/contact" className="text-gray-400 text-[13px] uppercase tracking-wide group-hover:text-black transition-colors">Contact</a>
-                    <span className="
-                        absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-black
-                        opacity-0 group-hover:opacity-100 transition-opacity duration-300
-                    "></span>
-                </div>
             </nav>
             <div className="text-gray-400 text-[13px] uppercase tracking-wide">Portfolio</div>
         </div>

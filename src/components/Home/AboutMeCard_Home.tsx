@@ -16,7 +16,9 @@ export default function AboutMeCard() {
             <div className="relative z-10 h-full flex flex-col justify-between">
                 <div>
                     <span className='text-gray-400 text-2xl'>✺</span>
-                    <p className="text-gray-400 text-xl">I'm Lukas, a Digital Designer with a passion for bringing ideas to life through visual storytelling.</p>
+                    <p className="text-gray-400 text-xl">I'm Tanish,  Passionate about building interactive, scalable, and user-friendly web apps.
+                        Skilled in React, Next.js, Tailwind, ShadCN, Redux, Node.js,
+                        and modern databases like Redis & PostgreSQL, SQL.</p>
                 </div>
 
                 <div className="flex justify-between items-center mt-8">

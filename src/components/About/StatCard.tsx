@@ -1,3 +1,5 @@
+import { NumberTicker } from "../magicui/number-ticker";
+
 const StatsCard = () => {
     return (
         // This is the single, large card container
@@ -14,19 +16,27 @@ const StatsCard = () => {
                 {/* Stat 1: Years of Experience */}
                 <div className="flex flex-col">
                     <div className="flex items-baseline">
-                        <span className="text-6xl font-medium text-black">12</span>
+                        <NumberTicker
+                            value={1}
+                            className="text-6xl font-medium text-black"
+                        />
+                        {/* <span className="text-6xl font-medium text-black">01</span> */}
                         <span className="text-4xl text-gray-400 ml-1">+</span>
                     </div>
                     {/* Added text-sm uppercase tracking-wide for the label style */}
-                    <span className="text-gray-400 text-sm  uppercase tracking-wide">YEARS OF EXPERIENCE</span>
+                    <span className="text-gray-400 text-sm  uppercase tracking-wide">YEARS OF CODING EXPERIENCE</span>
                 </div>
 
                 {/* Stat 2: Unhappy Clients */}
                 <div className="flex flex-col">
                     <div className="flex items-baseline">
-                        <span className="text-6xl font-medium text-black">00</span>
+                        <NumberTicker
+                            value={5}
+                            className="text-6xl font-medium text-black"
+                        />
+                        <span className="text-4xl text-gray-400 ml-1">+</span>
                     </div>
-                    <span className="text-gray-400 text-sm  uppercase tracking-wide">UNHAPPY CLIENTS</span>
+                    <span className="text-gray-400 text-sm  uppercase tracking-wide">PROJECTS CONSTRUCTED</span>
                 </div>
 
                 {/* Stat 3: Recognitions */}

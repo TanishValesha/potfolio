@@ -40,7 +40,7 @@ export default function SkillsCard() {
                     {skills.map((skill, index) => (
                         <div
                             key={index}
-                            className="group flex flex-col items-center p-4 rounded-2xl transition-all duration-300 hover:scale-105 cursor-pointer"
+                            className="group flex flex-col items-center p-4 rounded-2xl transition-all duration-300 hover:scale-120 cursor-pointer"
                         >
 
                             <img
