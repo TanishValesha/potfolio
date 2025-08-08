@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+
+import { motion, type Variants } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import AboutMeCard from '../components/Home/AboutMeCard_Home'
@@ -12,6 +13,7 @@ import ServiceCard from '../components/Home/ServiceCard'
 import WorkCard from '../components/Home/WorkCard'
 
 // Animation variants
+// Animation variants
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -19,23 +21,6 @@ const containerVariants = {
         transition: {
             staggerChildren: 0.1,
             delayChildren: 0.2
-        }
-    }
-}
-
-const cardVariants = {
-    hidden: {
-        opacity: 0,
-        y: 60,
-        scale: 0.9
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        transition: {
-            duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94]
         }
     }
 }
@@ -52,7 +37,7 @@ const slideInFromLeft = {
         scale: 1,
         transition: {
             duration: 0.7,
-            ease: [0.25, 0.46, 0.45, 0.94]
+            ease: [0.25, 0.46, 0.45, 0.94] as const // <-- And here
         }
     }
 }
@@ -69,7 +54,7 @@ const slideInFromRight = {
         scale: 1,
         transition: {
             duration: 0.7,
-            ease: [0.25, 0.46, 0.45, 0.94]
+            ease: [0.25, 0.46, 0.45, 0.94] as const // <-- And here
         }
     }
 }
@@ -86,7 +71,7 @@ const fadeInUp = {
         scale: 1,
         transition: {
             duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94]
+            ease: [0.25, 0.46, 0.45, 0.94] as const // <-- And here
         }
     }
 }
@@ -103,13 +88,20 @@ const scaleIn = {
         rotate: 0,
         transition: {
             duration: 0.8,
-            ease: [0.25, 0.46, 0.45, 0.94]
+            ease: [0.25, 0.46, 0.45, 0.94] as const // <-- And here
         }
     }
 }
 
+interface AnimatedCardProps {
+    children: React.ReactNode; // This is the key fix for the 'children' error
+    variant?: Variants; // Use the Framer Motion Variants type
+    delay?: number;
+    className?: string;
+}
+
 // Reusable AnimatedCard component
-const AnimatedCard = ({ children, variant = cardVariants, delay = 0, className = "" }) => {
+const AnimatedCard = ({ children, variant, delay = 0, className = "" }: AnimatedCardProps) => {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -132,14 +124,14 @@ const AnimatedCard = ({ children, variant = cardVariants, delay = 0, className =
     )
 }
 
-const AnimatedOnView = ({ children, variants = cardVariants, className = "" }) => {
+const AnimatedOnView = ({ children, variant, className = "" }: AnimatedCardProps) => {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, amount: 0.5 })
 
     return (
         <motion.div
             ref={ref}
-            variants={variants}
+            variants={variant}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             className={className}
@@ -240,7 +232,7 @@ const Home = () => {
             </div>
 
             {/* Animated Footer */}
-            <AnimatedOnView variants={fadeInUp}>
+            <AnimatedOnView variant={fadeInUp}>
                 <Footer />
             </AnimatedOnView>
         </div>

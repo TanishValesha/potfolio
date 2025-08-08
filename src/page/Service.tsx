@@ -1,144 +1,250 @@
-import { Check } from 'lucide-react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+// import Header from '@/components/Header'
+// import { Check } from 'lucide-react'
+// import { useState, useEffect, useRef } from 'react'
 
-export default function Service() {
-    const typographyServices = [
-        "Font Selection",
-        "Typeface Licensing",
-        "Typography Research",
-        "Custom Typography",
-        "Typeface Pairing"
-    ];
+// // Intersection Observer Hook
+// const useInView = (threshold = 0.1) => {
+//     const [isInView, setIsInView] = useState(false)
+//     const ref = useRef(null)
 
-    const logoServices = [
-        "Logo Variations",
-        "Color Palette",
-        "Iconography",
-        "Mockups",
-        "Brand Guidelines"
-    ];
+//     useEffect(() => {
+//         const observer = new IntersectionObserver(
+//             ([entry]) => {
+//                 if (entry.isIntersecting) {
+//                     setIsInView(true)
+//                 }
+//             },
+//             { threshold }
+//         )
 
-    return (
-        <div className="min-h-screen bg-gray-100 w-screen p-8">
-            {/* Header */}
-            <Header />
+//         const currentRef = ref.current
+//         if (currentRef) {
+//             observer.observe(currentRef)
+//         }
 
-            {/* Main Content */}
-            <div className="max-w-6xl mx-auto px-8">
-                {/* Page Title */}
-                <div className="text-center mb-16">
-                    <h1 className="text-6xl font-bold text-black mb-6">Services</h1>
-                    <p className="text-gray-400 text-lg leading-relaxed max-w-md mx-auto">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse varius enim in eros elementum tristique.
-                    </p>
-                </div>
+//         return () => {
+//             if (currentRef) {
+//                 observer.unobserve(currentRef)
+//             }
+//         }
+//     }, [threshold])
 
-                {/* Service Cards */}
-                <div className="grid grid-cols-2 gap-8 max-w-5xl mx-auto">
+//     return [ref, isInView]
+// }
 
-                    {/* Typography Card */}
-                    <div className="bg-white rounded-3xl p-12 shadow-sm relative overflow-hidden">
-                        {/* Background Pattern */}
-                        <div className="absolute top-0 -rotate-90 inset-10 opacity-100">
-                            <img
-                                src="https://assets-global.website-files.com/6526f09d3be13c204a126b74/653143017ae80eb6b1874f0a_bg-pattern-06.svg"
-                                alt="Background pattern"
-                                className="w-full h-full object-cover -rotate-180"
-                            />
-                        </div>
-                        {/* Content */}
-                        <div className="relative z-10">
-                            {/* Icon */}
-                            <div className="mb-8">
-                                <div className="w-16 h-16 flex items-center justify-center">
-                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-black">
-                                        <path fillRule="evenodd" clipRule="evenodd" d="M16 12C16 10.8954 16.8954 10 18 10H30C31.1046 10 32 10.8954 32 12V16C32 17.1046 31.1046 18 30 18H18C16.8954 18 16 17.1046 16 16V12ZM18 12V16H30V12H18Z" fill="currentColor" />
-                                        <path fillRule="evenodd" clipRule="evenodd" d="M16 30C16 28.8954 16.8954 28 18 28H30C31.1046 28 32 28.8954 32 30V36C32 37.1046 31.1046 38 30 38H18C16.8954 38 16 37.1046 16 36V30ZM18 30V36H30V30H18Z" fill="currentColor" />
-                                    </svg>
-                                </div>
-                            </div>
+// // Animated Card Wrapper
+// const AnimatedCard = ({
+//     children,
+//     animationType = 'slideUp',
+//     delay = 0,
+//     shimmerEffect = false
+// }) => {
+//     const [ref, isInView] = useInView(0.1)
 
-                            {/* Title */}
-                            <h2 className="text-3xl font-bold text-black mb-6">Typography</h2>
+//     const getAnimationClasses = () => {
+//         const baseClasses = `transition-all duration-700 ease-out`
 
-                            {/* Description */}
-                            <p className="text-gray-400 text-base leading-relaxed mb-8">
-                                A typography service involves various aspects related to the design and manipulation of text and fonts that represent a company or brand.
-                            </p>
+//         if (!isInView) {
+//             switch (animationType) {
+//                 case 'slideUp':
+//                     return `${baseClasses} translate-y-8 opacity-0`
+//                 case 'slideLeft':
+//                     return `${baseClasses} translate-x-8 opacity-0`
+//                 case 'slideRight':
+//                     return `${baseClasses} -translate-x-8 opacity-0`
+//                 case 'fadeIn':
+//                     return `${baseClasses} opacity-0`
+//                 default:
+//                     return `${baseClasses} translate-y-8 opacity-0`
+//             }
+//         }
 
-                            {/* Service List */}
-                            <div className="space-y-4 mb-12">
-                                {typographyServices.map((service, index) => (
-                                    <div key={index} className="flex items-center space-x-3">
-                                        <div className="w-5 h-5 rounded-full border border-gray-300 flex items-center justify-center flex-shrink-0">
-                                            <Check size={12} className="text-gray-400" />
-                                        </div>
-                                        <span className="text-gray-400 text-sm">{service}</span>
-                                    </div>
-                                ))}
-                            </div>
+//         return `${baseClasses} translate-y-0 translate-x-0 opacity-100 hover:shadow-xl hover:scale-[1.02]`
+//     }
 
-                            {/* Learn More Button */}
-                            <button className="w-full bg-black text-white py-4 px-6 rounded-full font-medium hover:bg-gray-800 transition-colors duration-300">
-                                Learn more
-                            </button>
-                        </div>
-                    </div>
+//     const shimmerClasses = shimmerEffect ? 'group relative overflow-hidden' : ''
 
-                    {/* Logo Design Card */}
-                    <div className="bg-white rounded-3xl p-12 shadow-sm relative overflow-hidden">
-                        {/* Background Pattern */}
-                        <div className="absolute inset-0 opacity-3">
-                            <img
-                                src="https://cdn.prod.website-files.com/6526f09d3be13c204a126b74/65317b70405246945c025746_bg-pattern-03.svg"
-                                alt="Background pattern"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
+//     return (
+//         <div
+//             ref={ref}
+//             className={`${getAnimationClasses()} ${shimmerClasses}`}
+//             style={{
+//                 transitionDelay: isInView ? `${delay}ms` : '0ms',
+//                 transitionDuration: '700ms'
+//             }}
+//         >
+//             {shimmerEffect && (
+//                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out">
+//                     <div className="h-full w-2 bg-gradient-to-r from-transparent via-white/60 to-transparent blur-sm"></div>
+//                 </div>
+//             )}
+//             {children}
+//         </div>
+//     )
+// }
 
-                        {/* Content */}
-                        <div className="relative z-10">
-                            {/* Icon */}
-                            <div className="mb-8">
-                                <div className="w-16 h-16 flex items-center justify-center">
-                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="text-black">
-                                        <path d="M12 12L24 6L36 12V24L24 42L12 24V12Z" fill="currentColor" />
-                                        <path d="M24 18L30 15V21L24 24L18 21V15L24 18Z" fill="white" />
-                                    </svg>
-                                </div>
-                            </div>
+// // Header Component
+// // const Header = () => (
+// //     <div className="text-center mb-16">
+// //         <div className="inline-flex items-center gap-1 mb-6">
+// //             <span className="text-sm font-medium tracking-wider text-gray-400">CA</span>
+// //             <span className="text-sm font-medium tracking-wider text-gray-600">ARD</span>
+// //             <span className="text-xs text-gray-400">©</span>
+// //         </div>
 
-                            {/* Title */}
-                            <h2 className="text-3xl font-bold text-black mb-6">Logo Design</h2>
+// //         <h1 className="text-6xl font-bold text-gray-900 mb-6">
+// //             Services
+// //         </h1>
 
-                            {/* Description */}
-                            <p className="text-gray-400 text-base leading-relaxed mb-8">
-                                Logo design services involve creating a unique and visually appealing logo that represents a company, brand or organization.
-                            </p>
+// //         <p className="text-lg font-normal text-gray-500 max-w-2xl mx-auto leading-relaxed">
+// //             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+// //             <br />
+// //             Suspendisse varius enim in eros elementum tristique.
+// //         </p>
+// //     </div>
+// // )
 
-                            {/* Service List */}
-                            <div className="space-y-4 mb-12">
-                                {logoServices.map((service, index) => (
-                                    <div key={index} className="flex items-center space-x-3">
-                                        <div className="w-5 h-5 rounded-full border border-gray-300 flex items-center justify-center flex-shrink-0">
-                                            <Check size={12} className="text-gray-400" />
-                                        </div>
-                                        <span className="text-gray-400 text-sm">{service}</span>
-                                    </div>
-                                ))}
-                            </div>
+// interface FeatureProps {
+//     text: string;
+//     delay: number
+// }
 
-                            {/* Learn More Button */}
-                            <button className="w-full bg-black text-white py-4 px-6 rounded-full font-medium hover:bg-gray-800 transition-colors duration-300">
-                                Learn more
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <Footer />
-        </div>
-    );
-}
+// // Service Feature Item
+// const ServiceFeature = ({ text, delay = 0 }: FeatureProps) => {
+//     const [ref, isInView] = useInView(0.1)
+
+//     return (
+//         <div
+//             ref={ref}
+//             className={`flex items-center gap-3 transition-all duration-500 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
+//                 }`}
+//             style={{ transitionDelay: isInView ? `${delay}ms` : '0ms' }}
+//         >
+//             <div className="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0">
+//                 <Check size={12} className="text-gray-400" />
+//             </div>
+//             <span className="font-normal text-gray-600 text-sm">
+//                 {text}
+//             </span>
+//         </div>
+//     )
+// }
+
+// // Service Card Component
+// const ServiceCard = ({
+//     icon,
+//     title,
+//     description,
+//     features,
+//     buttonText = "Learn more",
+//     animationType = 'slideUp',
+//     delay = 0
+// }) => (
+//     <AnimatedCard
+//         animationType={animationType}
+//         delay={delay}
+//         shimmerEffect={true}
+//     >
+//         <div className="bg-white rounded-3xl p-8 shadow-sm h-full flex flex-col">
+//             {/* Icon */}
+//             <div className="mb-8">
+//                 <div className="text-4xl font-bold text-black">
+//                     {icon}
+//                 </div>
+//             </div>
+
+//             {/* Content */}
+//             <div className="flex-grow">
+//                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
+//                     {title}
+//                 </h3>
+
+//                 <p className="font-normal text-gray-600 mb-8 leading-relaxed">
+//                     {description}
+//                 </p>
+
+//                 {/* Features List */}
+//                 <div className="space-y-4 mb-8">
+//                     {features.map((feature, index) => (
+//                         <ServiceFeature
+//                             key={index}
+//                             text={feature}
+//                             delay={delay + (index * 100)}
+//                         />
+//                     ))}
+//                 </div>
+//             </div>
+
+//             {/* Button */}
+//             <button className="w-full bg-black text-white py-4 px-6 rounded-full font-medium transition-all duration-300 hover:bg-gray-800 hover:scale-[1.02]">
+//                 {buttonText}
+//             </button>
+//         </div>
+//     </AnimatedCard>
+// )
+
+// // Main Services Page
+// const ServicesPage = () => {
+//     const services = [
+//         {
+//             icon: "⧗",
+//             title: "Typography",
+//             description: "A typography service involves various aspects related to the design and manipulation of text and fonts that represent a company or brand.",
+//             features: [
+//                 "Font Selection",
+//                 "Typeface Licensing",
+//                 "Typography Research",
+//                 "Custom Typography",
+//                 "Typeface Pairing"
+//             ],
+//             animationType: "slideRight",
+//             delay: 200
+//         },
+//         {
+//             icon: "⧨",
+//             title: "Logo Design",
+//             description: "Logo design services involve creating a unique and visually appealing logo that represents a company, brand or organization.",
+//             features: [
+//                 "Logo Variations",
+//                 "Color Palette",
+//                 "Iconography",
+//                 "Mockups",
+//                 "Brand Guidelines"
+//             ],
+//             animationType: "slideLeft",
+//             delay: 400
+//         }
+//     ]
+
+//     return (
+//         <div className="min-h-screen w-screen py-20 px-8 bg-gray-50">
+//             <div className="max-w-6xl mx-auto">
+//                 {/* Animated Header */}
+//                 <AnimatedCard animationType="fadeIn" delay={100}>
+//                     <Header />
+//                 </AnimatedCard>
+
+//                 <div className='text-center mb-16'>
+//                     <h1 className="text-6xl font-bold text-gray-900 mb-6">
+//                         Services
+//                     </h1>
+
+//                     <p className="text-lg font-normal text-gray-500 max-w-2xl mx-auto leading-relaxed">
+//                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+//                         <br />
+//                         Suspendisse varius enim in eros elementum tristique.
+//                     </p>
+//                 </div>
+
+//                 {/* Services Grid */}
+//                 <div className="grid lg:grid-cols-2 gap-8">
+//                     {services.map((service, index) => (
+//                         <ServiceCard key={index} {...service} />
+//                     ))}
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default ServicesPage

@@ -107,7 +107,7 @@ export default function ExperienceTimeline() {
 
                     {/* Timeline End */}
                     <div className="relative pl-16 mt-12">
-                        <div className="absolute left-4 top-0 w-4 h-4 bg-gray-200 rounded-full border-2 border-gray-300"></div>
+                        <div className="absolute left-4 top-0 w-6 h-6 bg-gray-200 rounded-full border-2 border-gray-300"></div>
                         <div className="text-center py-4">
                             <div className="inline-flex items-center px-4 py-2 bg-white rounded-lg border border-gray-200 text-black text-sm">
                                 <span>Journey continues...</span>
